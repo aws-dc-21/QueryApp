@@ -20,7 +20,7 @@ class SavedQueriesController < ApplicationController
     @saved_query = SavedQuery.new(saved_query_params)
 
     if @saved_query.save
-      redirect_to @saved_query, notice: 'Saved query was successfully created.'
+      redirect_to saved_queries_path, :notice => 'Saved query was successfully created.'
     else
       render action: 'new'
     end
