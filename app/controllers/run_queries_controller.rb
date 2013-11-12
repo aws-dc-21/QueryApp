@@ -7,6 +7,7 @@ class RunQueriesController < ApplicationController
     @run_query = RunQuery.new(run_query_params)
 
     if @run_query.valid?
+      @query_runner = QueryRunner.new(@run_query.sql)
       # Default render
     else
       render :action => 'new'
