@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
+gem 'codemirror-rails'
 
 group :doc do
   gem 'sdoc', require: false
