@@ -1,0 +1,31 @@
+<h1>Listing saved_queries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Sql</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saved_queries.each do |saved_query| %>
+      <tr>
+        <td><%= saved_query.name %></td>
+        <td><%= saved_query.description %></td>
+        <td><%= saved_query.sql %></td>
+        <td><%= link_to 'Show', saved_query %></td>
+        <td><%= link_to 'Edit', edit_saved_query_path(saved_query) %></td>
+        <td><%= link_to 'Destroy', saved_query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Saved query', new_saved_query_path %>

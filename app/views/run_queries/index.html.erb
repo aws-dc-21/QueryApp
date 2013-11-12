@@ -1,0 +1,27 @@
+<h1>Listing run_queries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sql</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @run_queries.each do |run_query| %>
+      <tr>
+        <td><%= run_query.sql %></td>
+        <td><%= link_to 'Show', run_query %></td>
+        <td><%= link_to 'Edit', edit_run_query_path(run_query) %></td>
+        <td><%= link_to 'Destroy', run_query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Run query', new_run_query_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @saved_query.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @saved_query.description %>
+</p>
+
+<p>
+  <strong>Sql:</strong>
+  <%= @saved_query.sql %>
+</p>
+
+<%= link_to 'Edit', edit_saved_query_path(@saved_query) %> |
+<%= link_to 'Back', saved_queries_path %>
