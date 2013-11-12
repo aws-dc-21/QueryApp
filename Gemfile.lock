@@ -39,6 +39,8 @@ GEM
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.1.4)
+    codemirror-rails (3.16)
+      railties (>= 3.0, < 5)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
@@ -142,6 +144,7 @@ DEPENDENCIES
   activerecord-jdbcmysql-adapter (= 1.3.0)
   activerecord-jdbcsqlite3-adapter
   bootstrap-sass (~> 2.3.2.0)
+  codemirror-rails
   dotenv-rails
   jbuilder (~> 1.2)
   jquery-rails

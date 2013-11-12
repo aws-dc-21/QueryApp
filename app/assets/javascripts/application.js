@@ -13,4 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require codemirror
+//= require codemirror/modes/sql
 //= require_tree .
+
+$(function() {
+  window.editor = CodeMirror.fromTextArea($('#run_query_sql')[0], {
+    mode: 'text/x-sql',
+    indentWithTabs: true,
+    smartIndent: true,
+    lineNumbers: true,
+    matchBrackets : true,
+    autofocus: true
+  });
+});

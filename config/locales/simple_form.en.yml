@@ -1,4 +1,8 @@
 en:
+  helpers:
+    submit:
+      run_query:
+        create: "Run Query"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
