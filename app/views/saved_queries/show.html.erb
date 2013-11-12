@@ -1,19 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @saved_query.name %></h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @saved_query.name %>
-</p>
+<p><%= @saved_query.description %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @saved_query.description %>
-</p>
-
-<p>
-  <strong>Sql:</strong>
-  <%= @saved_query.sql %>
-</p>
+<%= render 'shared/query_runner_table', :query_runner => @query_runner %>
 
 <%= link_to 'Edit', edit_saved_query_path(@saved_query) %> |
 <%= link_to 'Back', saved_queries_path %>

@@ -6,6 +6,7 @@ class SavedQueriesController < ApplicationController
   end
 
   def show
+    @query_runner = QueryRunner.new(@saved_query.sql)
   end
 
   def new
