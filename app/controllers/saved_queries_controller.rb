@@ -19,35 +19,24 @@ class SavedQueriesController < ApplicationController
   def create
     @saved_query = SavedQuery.new(saved_query_params)
 
-    respond_to do |format|
-      if @saved_query.save
-        format.html { redirect_to @saved_query, notice: 'Saved query was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @saved_query }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @saved_query.errors, status: :unprocessable_entity }
-      end
+    if @saved_query.save
+      redirect_to @saved_query, notice: 'Saved query was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @saved_query.update(saved_query_params)
-        format.html { redirect_to @saved_query, notice: 'Saved query was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @saved_query.errors, status: :unprocessable_entity }
-      end
+    if @saved_query.update(saved_query_params)
+      redirect_to @saved_query, notice: 'Saved query was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @saved_query.destroy
-    respond_to do |format|
-      format.html { redirect_to saved_queries_url }
-      format.json { head :no_content }
-    end
+    redirect_to saved_queries_url
   end
 
   private
