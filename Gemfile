@@ -21,9 +21,5 @@ group :development, :test do
   gem 'puma'
   gem 'quiet_assets'
   gem 'dotenv-rails'
-  gem 'activerecord-jdbcsqlite3-adapter', :require => 'jdbc-sqlite3', :require => 'arjdbc'
-end
-
-group :production do
-  gem 'activerecord-jdbcmysql-adapter', '1.3.0'
+  gem 'sqlite3'
 end
