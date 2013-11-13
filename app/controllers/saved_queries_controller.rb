@@ -11,7 +11,7 @@ class SavedQueriesController < ApplicationController
   end
 
   def new
-    @saved_query = SavedQuery.new
+    @saved_query = SavedQuery.new(saved_query_params)
   end
 
   def edit

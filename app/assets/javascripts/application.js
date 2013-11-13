@@ -27,7 +27,9 @@ $(function() {
     autofocus: true
   });
 
-  $(document).on('click', '#query-container form input[type="submit"]', function (event) {
+  var $document = $(document);
+
+  $document.on('click', '#query-container form input[type="submit"]', function (event) {
     var $this = $(this),
       csvDownload = $this.val().match(/CSV/),
       remote = !csvDownload;
@@ -40,12 +42,20 @@ $(function() {
     }
   });
 
+  $document.on('click', '#save-as', function (event) {
+    var $this = $(this),
+      href = $this.attr('href'),
+      newHref = href.replace('__SQL__', window.editor.getValue());
+
+    $this.attr('href', newHref);
+  });
+
   // TODO: error handling
-  $(document).on('ajax:success', '#query-container form', function (event, data, status, xhr) {
+  $document.on('ajax:success', '#query-container form', function (event, data, status, xhr) {
     $('#query-results-container').html(data);
   });
 
-  $(document).on('ajax:success', '#saved-queries a', function (event, data, status, xhr) {
+  $document.on('ajax:success', '#saved-queries a', function (event, data, status, xhr) {
     $('#query-container .run_query_sql .help-block').html(data.description);
     window.editor.setValue(data.sql);
   });
