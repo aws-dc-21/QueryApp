@@ -2,7 +2,7 @@ class SavedQueriesController < ApplicationController
   before_action :set_saved_query, only: [:show, :edit, :update, :destroy]
 
   def index
-    @saved_queries = SavedQuery.all
+    @saved_queries = SavedQuery.order('query_count desc')
     @run_query = RunQuery.new
   end
 
