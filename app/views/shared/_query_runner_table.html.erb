@@ -1,7 +1,10 @@
 <% if query_runner.empty? %>
-  (No results)
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>No Results!</strong>
+  </div>
 <% else %>
-  <table>
+  <table class="table table-stripped">
     <thead>
       <tr>
         <% query_runner.headers.each do |header| %>
