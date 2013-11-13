@@ -18,6 +18,8 @@
 //= require_tree .
 
 $(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+
   window.editor = CodeMirror.fromTextArea($('#run_query_sql')[0], {
     mode: 'text/x-sql',
     indentWithTabs: true,

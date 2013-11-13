@@ -10,7 +10,12 @@
     <% @saved_queries.each do |saved_query| %>
       <tr>
         <td><%= saved_query.query_count || 0 %></td>
-        <td><%= link_to saved_query.name, saved_query_path(saved_query), :remote => true %></td>
+        <td><%= link_to saved_query.name,
+          saved_query_path(saved_query),
+          :remote => true,
+          :data => { :toggle => 'tooltip',
+                     :placement => 'bottom',
+                     :'original-title' => saved_query.description } %></td>
       </tr>
     <% end %>
   </tbody>
