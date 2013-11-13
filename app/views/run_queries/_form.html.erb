@@ -1,4 +1,4 @@
-<%= simple_form_for(@run_query, :remote => true) do |f| %>
+<%= simple_form_for(@run_query) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -7,5 +7,6 @@
 
   <div class="form-actions">
     <%= f.button :submit, :value => 'Display Results' %>
+    <%= f.button :submit, :value => 'Download CSV' %>
   </div>
 <% end %>

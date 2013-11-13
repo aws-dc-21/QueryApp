@@ -20,11 +20,15 @@ class QueryRunner
   end
 
   def to_csv
-    CSV.generate do |csv|
-      csv << headers
+    if empty?
+      ''
+    else
+      CSV.generate do |csv|
+        csv << headers
 
-      results.each do |result|
-        csv << result.values
+        results.each do |result|
+          csv << result.values
+        end
       end
     end
   end

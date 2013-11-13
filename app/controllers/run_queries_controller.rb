@@ -1,4 +1,6 @@
 class RunQueriesController < ApplicationController
+  layout false
+
   def new
     @run_query = RunQuery.new
   end
@@ -8,9 +10,15 @@ class RunQueriesController < ApplicationController
 
     if @run_query.valid?
       @query_runner = QueryRunner.new(@run_query.sql)
-      render :action => 'create', :layout => false
+
+      case params[:commit]
+      when 'Display Results'
+        render :action => 'create'
+      when 'Download CSV'
+        send_data @query_runner.to_csv, :filename => 'data.csv'
+      end
     else
-      render :action => 'new', :layout => false
+      render :action => 'new'
     end
   end
 

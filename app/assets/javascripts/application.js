@@ -27,15 +27,18 @@ $(function() {
     autofocus: true
   });
 
-//  success: function(data, status, xhr) {
-//    element.trigger('ajax:success', [data, status, xhr]);
-//  },
-//  complete: function(xhr, status) {
-//    element.trigger('ajax:complete', [xhr, status]);
-//  },
-//  error: function(xhr, status, error) {
-//    element.trigger('ajax:error', [xhr, status, error]);
-//  },
+  $(document).on('click', '#query-container form input[type="submit"]', function (event) {
+    var $this = $(this),
+      csvDownload = $this.val().match(/CSV/),
+      remote = !csvDownload;
+
+    if (remote) {
+      event.preventDefault();
+      // CodeMirror doesn't seem to set the value when preventDefault is called, so we have to do that manually
+      $('#query-container #run_query_sql').val(window.editor.getValue());
+      $.rails.handleRemote($this.closest('form'));
+    }
+  });
 
   // TODO: error handling
   $(document).on('ajax:success', '#query-container form', function (event, data, status, xhr) {
