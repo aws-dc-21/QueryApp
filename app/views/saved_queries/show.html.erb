@@ -1,8 +1,10 @@
-<h2><%= @saved_query.name %></h2>
+<div class="span12">
+  <h2><%= @saved_query.name %></h2>
 
-<p><%= @saved_query.description %></p>
+  <p><%= @saved_query.description %></p>
 
-<%= render 'shared/query_runner_table', :query_runner => @query_runner %>
+  <%= render 'shared/query_runner_table', :query_runner => @query_runner %>
 
-<%= link_to 'Edit', edit_saved_query_path(@saved_query) %> |
-<%= link_to 'Back', saved_queries_path %>
+  <%= link_to 'Edit', edit_saved_query_path(@saved_query) %> |
+  <%= link_to 'Back', saved_queries_path %>
+</div>

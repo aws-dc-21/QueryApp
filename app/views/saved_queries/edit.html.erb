@@ -1,6 +1,8 @@
-<h1>Editing saved_query</h1>
+<div class="span12">
+  <h1>Edit Saved Query: <%= @saved_query.name %></h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @saved_query %> |
-<%= link_to 'Back', saved_queries_path %>
+  <%= link_to 'Show', @saved_query %> |
+  <%= link_to 'Back', saved_queries_path %>
+</div>
