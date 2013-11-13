@@ -7,12 +7,12 @@ class QueryRunner
     @sql = sql
   end
 
-  def headers
-    results.first ? results.first.keys : []
+  def empty?
+    results.empty?
   end
 
-  def empty?
-    headers == []
+  def headers
+    results.first.keys
   end
 
   def results
