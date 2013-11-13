@@ -14,10 +14,17 @@
  */
 @import "bootstrap-flatly";
 
-#main {
-  padding-top: 40px;
-}
+body {
+  #main {
+    padding-top: 40px;
+  }
 
-input[type="text"], textarea {
-  @extend .input-xxlarge;
+  input[type="text"], textarea {
+    @extend .input-xxlarge;
+  }
+
+  .help-block {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
 }
