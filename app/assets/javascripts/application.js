@@ -20,7 +20,9 @@
 $(function() {
   $('[data-toggle="tooltip"]').tooltip();
 
-  window.editor = CodeMirror.fromTextArea($('#run_query_sql')[0], {
+  var $editorField = ($('#saved_query_sql')[0] || $('#run_query_sql')[0]);
+
+  window.editor = CodeMirror.fromTextArea($editorField, {
     mode: 'text/x-sql',
     indentWithTabs: true,
     smartIndent: true,
