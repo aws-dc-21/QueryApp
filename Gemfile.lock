@@ -31,8 +31,13 @@ GEM
     bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.1.4)
+    byebug (2.3.1)
+      columnize (~> 0.3.6)
+      debugger-linecache (~> 1.2.0)
     codemirror-rails (3.16)
       railties (>= 3.0, < 5)
+    columnize (0.3.6)
+    debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
     dotenv-rails (0.9.0)
@@ -133,6 +138,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 2.3.2.0)
+  byebug
   codemirror-rails
   dotenv-rails
   jbuilder (~> 1.2)
