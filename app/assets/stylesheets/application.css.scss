@@ -17,3 +17,7 @@
 #main {
   padding-top: 40px;
 }
+
+input[type="text"], textarea {
+  @extend .input-xxlarge;
+}
