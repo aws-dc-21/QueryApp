@@ -12,8 +12,8 @@
  *= require codemirror
  *= require_tree .
  */
-@import "bootstrap";
+@import "bootstrap-flatly";
 
-body {
+#main {
   padding-top: 40px;
 }
