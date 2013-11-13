@@ -2,7 +2,7 @@ en:
   helpers:
     submit:
       run_query:
-        create: "Run Query"
+        create: "Display Results"
   simple_form:
     "yes": 'Yes'
     "no": 'No'

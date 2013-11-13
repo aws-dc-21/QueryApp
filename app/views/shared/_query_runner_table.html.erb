@@ -1,10 +1,10 @@
 <table>
   <thead>
-    <% query_runner.headers.each do |header| %>
-      <tr>
+    <tr>
+      <% query_runner.headers.each do |header| %>
         <th><%= header %></th>
-      </tr>
-    <% end %>
+      <% end %>
+    </tr>
   </thead>
   <tbody>
     <% query_runner.results.each do |result| %>

@@ -26,4 +26,24 @@ $(function() {
     matchBrackets : true,
     autofocus: true
   });
+
+//  success: function(data, status, xhr) {
+//    element.trigger('ajax:success', [data, status, xhr]);
+//  },
+//  complete: function(xhr, status) {
+//    element.trigger('ajax:complete', [xhr, status]);
+//  },
+//  error: function(xhr, status, error) {
+//    element.trigger('ajax:error', [xhr, status, error]);
+//  },
+
+  // TODO: error handling
+  $(document).on('ajax:success', '#query-container form', function (event, data, status, xhr) {
+    $('#query-results-container').html(data);
+  });
+
+  $(document).on('ajax:success', '#saved-queries a', function (event, data, status, xhr) {
+    $('#query-container .run_query_sql .help-block').html(data.description);
+    window.editor.setValue(data.sql);
+  });
 });

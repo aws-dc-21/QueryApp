@@ -3,10 +3,11 @@ class SavedQueriesController < ApplicationController
 
   def index
     @saved_queries = SavedQuery.all
+    @run_query = RunQuery.new
   end
 
   def show
-    @query_runner = QueryRunner.new(@saved_query.sql)
+    render :json => @saved_query.to_json
   end
 
   def new

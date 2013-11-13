@@ -8,9 +8,9 @@ class RunQueriesController < ApplicationController
 
     if @run_query.valid?
       @query_runner = QueryRunner.new(@run_query.sql)
-      # Default render
+      render :action => 'create', :layout => false
     else
-      render :action => 'new'
+      render :action => 'new', :layout => false
     end
   end
 

@@ -1,23 +1,11 @@
-<div class="span12">
-  <table class="table table-stripped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
+<div class="span4">
+  <%= render 'index' %>
+</div>
 
-    <tbody>
-      <% @saved_queries.each do |saved_query| %>
-        <tr>
-          <td><%= saved_query.name %></td>
-          <td><%= saved_query.description %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New Saved Query', new_saved_query_path %>
+<div class="span8">
+  <div id="query-container">
+    <%= render 'run_queries/form' %>
+  </div>
+  <hr />
+  <div id="query-results-container"></div>
 </div>

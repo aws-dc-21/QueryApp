@@ -1,0 +1,17 @@
+<table id="saved-queries" class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Popularity</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @saved_queries.each do |saved_query| %>
+      <tr>
+        <td>0 (placeholder)</td>
+        <td><%= link_to saved_query.name, saved_query_path(saved_query), :remote => true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
