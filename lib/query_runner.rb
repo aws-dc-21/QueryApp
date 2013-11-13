@@ -1,3 +1,5 @@
+require 'csv'
+
 class QueryRunner
   attr_reader :sql
 
@@ -11,5 +13,15 @@ class QueryRunner
 
   def results
     @results ||= ActiveRecord::Base.connection.select_all(sql)
+  end
+
+  def to_csv
+    CSV.generate do |csv|
+      csv << headers
+
+      results.each do |result|
+        csv << result.values
+      end
+    end
   end
 end
