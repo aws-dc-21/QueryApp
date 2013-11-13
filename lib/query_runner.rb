@@ -8,7 +8,11 @@ class QueryRunner
   end
 
   def headers
-    results.first.keys
+    results.first ? results.first.keys : []
+  end
+
+  def empty?
+    headers == []
   end
 
   def results
