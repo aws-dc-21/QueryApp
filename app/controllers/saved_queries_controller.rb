@@ -1,3 +1,5 @@
+require 'base64'
+
 class SavedQueriesController < ApplicationController
   before_action :set_saved_query, only: [:show, :edit, :update, :destroy]
 
@@ -11,7 +13,7 @@ class SavedQueriesController < ApplicationController
   end
 
   def new
-    @saved_query = SavedQuery.new(saved_query_params)
+    @saved_query = SavedQuery.new(:sql => Base64.decode64(params[:sql_btoa]))
   end
 
   def edit

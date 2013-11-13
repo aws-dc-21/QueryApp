@@ -49,7 +49,7 @@ $(function() {
   $document.on('click', '#save-as', function (event) {
     var $this = $(this),
       href = $this.attr('href'),
-      newHref = href.replace('__SQL__', window.editor.getValue());
+      newHref = href.replace('__SQL__', btoa(window.editor.getValue()));
 
     $this.attr('href', newHref);
   });
