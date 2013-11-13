@@ -6,7 +6,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, :value => 'Display Results' %>
+    <%= f.button :submit, :value => 'Display Results', :class => 'btn btn-primary' %>
     <%= f.button :submit, :value => 'Download CSV' %>
     <%= link_to 'Save As...', new_saved_query_path(:saved_query => { :sql => '__SQL__' }), :class => 'btn', :id => 'save-as' %>
   </div>
