@@ -54,9 +54,11 @@ $(function() {
     $this.attr('href', newHref);
   });
 
-  // TODO: error handling
   $document.on('ajax:success', '#query-container form', function (event, data, status, xhr) {
     $('#query-results-container').html(data);
+  });
+  $document.on('ajax:error', '#query-container form', function (event, data, status, xhr) {
+    $('#query-results-container').html(data.responseText);
   });
 
   $document.on('ajax:success', '#saved-queries a', function (event, data, status, xhr) {

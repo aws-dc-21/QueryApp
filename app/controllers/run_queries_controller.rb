@@ -22,8 +22,12 @@ class RunQueriesController < ApplicationController
         send_data @query_runner.to_csv, :filename => 'data.csv'
       end
     else
-      render :action => 'new'
+      flash[:errors] = @run_query.errors.full_messages
+      render :partial => 'errors', :status => 422
     end
+  rescue => e
+    flash[:errors] = [e.message]
+    render :partial => 'errors', :status => 500
   end
 
   private
