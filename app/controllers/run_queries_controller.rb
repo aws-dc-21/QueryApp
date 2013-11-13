@@ -7,6 +7,8 @@ class RunQueriesController < ApplicationController
 
   def create
     @run_query = RunQuery.new(run_query_params)
+    saved_query = SavedQuery.where(:sql => run_query_params[:sql]).first
+    SavedQuery.increment_counter(:query_count, saved_query.id)
 
     if @run_query.valid?
       @query_runner = QueryRunner.new(@run_query.sql)
